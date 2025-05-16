@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Chart</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f9f1;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #2e8b57;
+      font-size: 32px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    h1::before {
+      content: "🌱";
+      font-size: 32px;
+      margin-right: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2e8b57;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .chart-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Crop Prediction Frequency</h1>
+  <a href="/">← Back</a>
+
+  <div class="chart-container">
+    <img src="{{ chart_url }}" alt="Crop Frequency Chart">
+  </div>
+
+</body>
+</html>

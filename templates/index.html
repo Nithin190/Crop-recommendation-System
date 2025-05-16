@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Crop Recommendation System</h1>
+        <form action="/predict" method="POST">
+            <label for="N">N:</label>
+            <input type="number" name="N" placeholder="Enter Nitrogen value" required>
+
+            <label for="P">P:</label>
+            <input type="number" name="P" placeholder="Enter Phosphorus value" required>
+
+            <label for="K">K:</label>
+            <input type="number" name="K" placeholder="Enter Potassium value" required>
+
+            <label for="temperature">Temperature:</label>
+            <input type="number" step="any" name="temperature" placeholder="Enter Temperature (°C)" required>
+
+            <label for="humidity">Humidity:</label>
+            <input type="number" step="any" name="humidity" placeholder="Enter Humidity (%)" required>
+
+            <label for="ph">Ph:</label>
+            <input type="number" step="any" name="ph" placeholder="Enter Soil pH" required>
+
+            <label for="rainfall">Rainfall:</label>
+            <input type="number" step="any" name="rainfall" placeholder="Enter Rainfall (mm)" required>
+
+            <button type="submit">Predict Crop</button>
+        </form>
+
+        <div class="links">
+            <a href="/history">View Prediction History</a>
+            <a href="/chart">View Crop Chart</a>
+        </div>
+
+        {% if prediction %}
+        <div class="result">
+            <p>Recommended Crop: <span>{{ prediction }}</span></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

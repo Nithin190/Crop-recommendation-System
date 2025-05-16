@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction History</h1>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>N</th>
+                    <th>P</th>
+                    <th>K</th>
+                    <th>Temp (°C)</th>
+                    <th>Humidity (%)</th>
+                    <th>pH</th>
+                    <th>Rainfall (mm)</th>
+                    <th>Recommended Crop</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.N }}</td>
+                    <td>{{ record.P }}</td>
+                    <td>{{ record.K }}</td>
+                    <td>{{ record.temperature }}</td>
+                    <td>{{ record.humidity }}</td>
+                    <td>{{ record.ph }}</td>
+                    <td>{{ record.rainfall }}</td>
+                    <td>{{ record.recommended_crop }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="table-wrapper">
+          <table class="history-table">
+              ...
+          </table>
+      </div>
+      
+        <div class="links">
+            <a href="/">← Back to Home</a>
+            <a href="/download_csv">Download CSV</a>
+        </div>
+    </div>
+</body>
+</html>

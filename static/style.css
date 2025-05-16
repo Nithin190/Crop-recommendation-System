@@ -1,0 +1,175 @@
+/* GLOBAL & LAYOUT */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../static/back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #f0fff0; /* light green background */
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 35%; /* a bit smaller */
+    max-width: 900px;
+    margin: auto;
+}
+
+/* HEADINGS */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 26px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+/* FORM */
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #34495e;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+}
+
+form input::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #219150;
+}
+
+/* RESULT TEXT */
+.result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.result span {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* LINKS */
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #2980b9;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* BEAUTIFIED PREDICTION HISTORY TABLE */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Table Header */
+.history-table thead {
+    background: linear-gradient(90deg, #27ae60, #219150);
+    color: white;
+    font-size: 18px;
+}
+
+/* Table Cells */
+.history-table th,
+.history-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Alternate Row Color */
+.history-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+.history-table tbody tr:hover {
+    background-color: #e0f7e9;
+    transform: scale(1.01);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(39, 174, 96, 0.2);
+}
+
+/* Rounded Corners */
+.history-table tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.history-table tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .history-table th,
+    .history-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
